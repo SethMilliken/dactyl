@@ -1,0 +1,71 @@
+"2.1 (created: 2009/05/21 13:13:06)
+silent colorscheme araxia
+
+set activate=all
+set activate-=paste,diverted,links
+set editor="~/bin/vimperator"
+set guioptions=BMs
+set hinttimeout=500
+set incfind
+set hlfind
+set maxitems=20
+set newtab=all
+set runtimepath=~/.pentadactyl
+set visualbell
+set hintinputs+=name
+set wildmode=list:longest,full
+set hintkeys=1234567890
+" set wildoptions=auto,sort
+"" Experimental
+" set passkeys=...
+" set noinsertmode
+" set showstatuslinks=command
+" set wildignore=...
+" set hintkeys=asdfghjkl;
+set jsdebugger
+set strictfocus
+set verbose=7
+
+" Show statusbar in fullscreen mode
+autocmd Fullscreen .* :js document.getElementById("status-bar").setAttribute("moz-collapsed", false)
+
+" Keybinding fixes
+map <M-m> :emenu Window.Zoom<CR>
+imap <M-m> <Esc>:emenu Window.Zoom<CR>
+imap <C-c> <Esc>
+cmap <C-c> <Esc>
+vmap <C-c> <Esc>
+
+map <C-l> <ESC>:set nohlfind<CR>:echo "Reset"<CR>
+imap <C-l> <ESC>:echo "Reset"<CR>
+cmap <C-l> <ESC>:echo "Reset"<CR>
+
+map <M-o> :open ~/<CR>
+
+map <C-e> :open insta<CR>|:echo "Saving to Instapaper..."<CR>
+
+map <M-y> :js testing("This is an example of calling javascript from a map.");<CR>:echo ""<CR>
+
+javascript <<EOF
+function testing(value) {
+		alert(value);
+}
+EOF
+
+" Note: Move tab forward, then back (<C-S-[>, <C-S-]>) to recover from dreaded "---EMBED---" lock.
+
+"map <C-A-z> normal "f5gT<A-d>d"
+
+" Add RSS icon to statusbar
+javascript <<EOF
+(function(){
+var feedPanel = document.createElement("statusbarpanel");
+feedPanel.setAttribute("id", "feed-panel-clone");
+feedPanel.appendChild(document.getElementById("feed-button"));
+feedPanel.firstChild.setAttribute("style", "padding: 0; max-height: 16px;");
+document.getElementById("status-bar")
+.insertBefore(feedPanel, document.getElementById("security-button"));
+})();
+EOF
+
+" vim:ft=vimperator:
