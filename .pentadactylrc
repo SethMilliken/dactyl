@@ -1,8 +1,8 @@
 "2.1 (created: 2009/05/21 13:13:06)
 silent colorscheme araxia
 
-set activate=all
-set activate-=paste,diverted,links
+set activate=
+" set activate-=paste,diverted,links
 set editor="~/bin/vimperator"
 set guioptions=BMs
 set hinttimeout=500
