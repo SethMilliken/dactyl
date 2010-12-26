@@ -1,7 +1,7 @@
 "2.1 (created: 2009/05/21 13:13:06)
 silent colorscheme araxia
 
-set activate=
+set activate=downloads,help,tabopen,homepage,extoptions,bookmarks,addons
 " set activate-=paste,diverted,links
 set editor="~/bin/vimperator"
 set guioptions=BMs
@@ -25,6 +25,8 @@ set hintkeys=1234567890
 set jsdebugger
 set strictfocus
 set verbose=7
+" don't show autocomplete list until <Tab>
+set autocomplete=
 
 " Show statusbar in fullscreen mode
 autocmd Fullscreen .* :js document.getElementById("status-bar").setAttribute("moz-collapsed", false)
