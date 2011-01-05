@@ -1,8 +1,8 @@
 "2.1 (created: 2009/05/21 13:13:06)
 silent colorscheme araxia
 
-set activate=downloads,help,tabopen,homepage,extoptions,bookmarks,addons
-" set activate-=paste,diverted,links
+set activate=
+set activate+=addons,bookmarks,downloads,extoptions,help,homepage,tabopen
 set editor="~/bin/vimperator"
 set guioptions=BMs
 set hinttimeout=500
@@ -48,9 +48,11 @@ map <C-e> :open insta<CR>|:echo "Saving to Instapaper..."<CR>
 
 map <M-y> :js testing("This is an example of calling javascript from a map.");<CR>:echo ""<CR>
 
+map <M-p> -d "Testing description" -js testing("Another way of calling javascript from a map.");
+
 javascript <<EOF
 function testing(value) {
-		alert(value);
+    alert(value);
 }
 EOF
 
