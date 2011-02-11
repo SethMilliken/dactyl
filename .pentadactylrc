@@ -24,7 +24,7 @@ set hintkeys=1234567890
 " set hintkeys=asdfghjkl;
 set jsdebugger
 set strictfocus
-set verbose=7
+set verbose=0
 " don't show autocomplete list until <Tab>
 set autocomplete=
 
