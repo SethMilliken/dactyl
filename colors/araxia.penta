@@ -7,7 +7,7 @@
 hi Bell												border: 0 none; background-color: black;
 hi Boolean										color: #CC9393;
 " padding: vertical-offset horizontal-offset
-hi CmdLine										font-family: Inconsolata; padding: 0px 2px; font-size: 9pt; border-style: solid; border-width: 2px; border-color: goldenrod;
+hi CmdLine										font-family: Inconsolata; margin-right: 2px; font-size: 9pt; border-style: solid; border-width: 1px; border-color: goldenrod;
 
 hi CmdOutput									white-space: pre;
 hi CompDesc										color: skyblue; width: 50%; font-size: 9pt;
@@ -85,11 +85,21 @@ style -name tab chrome://* <<EOM
 
 /* Tabs themselves. */
 #content tab:not([selected]) {
+	padding: 0px !important; /* Tabs flush with sides. */
 	/* background-color: #302833 !important; */
+}
+
+.tabbrowser-tab {
+	font-family: Inconsolata !important;
+	font-size: 8pt !important;
 }
 
 .tabbrowser-tab[selected="true"] {
 	font-weight: bold !important;
+}
+
+.tabbrowser-tab:not([selected]) {
+	font-weight: normal !important;
 }
 
 /* URL Bar */
@@ -108,7 +118,7 @@ style -name statusbar chrome://* <<EOM
 }
 
 statusbarpanel>* {
-	margin: 1px !important;
+	margin: 0px !important;
 	padding: 0px !important;
 }
 
