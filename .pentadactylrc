@@ -1,8 +1,8 @@
 "2.1 (created: 2009/05/21 13:13:06)
 silent colorscheme araxia
 
-set activate=
-set activate+=addons,bookmarks,downloads,extoptions,help,homepage,tabopen
+set activate=downloads,help,tabopen,homepage,extoptions,bookmarks,addons
+" set activate-=paste,diverted,links
 set editor="~/bin/vimperator"
 set guioptions=BMs
 set hinttimeout=500
@@ -24,7 +24,7 @@ set hintkeys=1234567890
 " set hintkeys=asdfghjkl;
 set jsdebugger
 set strictfocus
-set verbose=7
+set verbose=0
 " don't show autocomplete list until <Tab>
 set autocomplete=
 
@@ -46,19 +46,23 @@ map <M-o> :open ~/<CR>
 
 map <C-e> :open insta<CR>|:echo "Saving to Instapaper..."<CR>
 
-map <M-y> :js testing("This is an example of calling javascript from a map.");<CR>:echo ""<CR>
-
-map <M-p> -d "Testing description" -js testing("Another way of calling javascript from a map.");
-
-javascript <<EOF
-function testing(value) {
-    alert(value);
-}
-EOF
+" map <M-y> :js alert("This is an example of calling javascript from a map.")<CR>
+" map <M-y> :js inputHintMode();<CR>:echo ""<CR>
 
 " Note: Move tab forward, then back (<C-S-[>, <C-S-]>) to recover from dreaded "---EMBED---" lock.
 
 "map <C-A-z> normal "f5gT<A-d>d"
+
+" New Hintmode ;e for form elements only.
+set extendedhinttags&
+set extendedhinttags+=[e]:'//input[not(@type=''hidden'')] | //xhtml:input[not(@type=''hidden'')] | //textarea | //xhtml:textarea | //button | //xhtml:button | //select | //xhtml:select'
+javascript <<EOF
+(function(){
+if (!hints.modes["e"]){
+    hints.addMode("e", "Focus form fields", function (elem) { buffer.followLink(elem, dactyl.CURRENT_TAB); });
+}
+})();
+EOF
 
 " Add RSS icon to statusbar
 javascript <<EOF
@@ -69,6 +73,17 @@ feedPanel.appendChild(document.getElementById("feed-button"));
 feedPanel.firstChild.setAttribute("style", "padding: 0; max-height: 16px;");
 document.getElementById("status-bar")
 .insertBefore(feedPanel, document.getElementById("security-button"));
+})();
+EOF
+
+" Add favicon to statusbar
+javascript <<EOF
+(function() {
+    var faviconPanel = document.createElement("faviconpanel");
+    faviconPanel.setAttribute("id", "favicon-panel-clone");
+    faviconPanel.appendChild(document.getElementById("identity-box"));
+    faviconPanel.firstChild.setAttribute("style", "padding: 0; max-height: 16px;");
+    document.getElementById("status-bar").insertBefore(faviconPanel, document.getElementById("security-button"));
 })();
 EOF
 
