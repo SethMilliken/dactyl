@@ -1,101 +1,105 @@
-" Vimperator Colorscheme
+" Pentadactyl Colorscheme
 "
-" Name:		araxia
-" Author: Seth Milliken
+" Name:   araxia
+" Author: Seth Milliken <seth@araxia.net>
+" Last Change: 2011-02-14
 "
 """ COLORSCHEME {{{
-hi Bell												border: 0 none; background-color: black;
-hi Boolean										color: #CC9393;
+hi -a Bell                        background-color: black; border: 0 none;
+hi -a Boolean                     color: #CC9393;
 " padding: vertical-offset horizontal-offset
-hi CmdLine										font-family: Inconsolata; padding: 0px 2px; font-size: 9pt; border-style: solid; border-width: 2px; border-color: goldenrod;
+hi -a CmdLine                     font-family: Inconsolata; font-size: 9pt; border-style: solid; border-width: 1px; border-color: goldenrod;
 
-hi CmdOutput									white-space: pre;
-hi CompDesc										color: skyblue; width: 50%; font-size: 9pt;
+hi -a CmdOutput                   white-space: pre; font-family: Inconsolata; font-size: 9pt;
+hi -a CompDesc                    color: skyblue; width: 50%; font-size: 9pt;
 " Space between groups in completion
-hi CompGroup:not(:first-of-type)    margin-top: .2em;
-hi CompIcon										width: 16px; min-width: 16px; display: inline-block; margin-right: .5ex;
-hi CompIcon>img								max-width: 16px; max-height: 16px; vertical-align: middle;
-hi CompItem										font-size: 9pt; background: black;
-hi CompItem>*									padding: 0ex 1ex;
+hi -a CompGroup:not(:first-of-type)    margin-top: .2em;
+hi -a CompIcon                    width: 16px; min-width: 16px; display: inline-block; margin-right: .5ex;
+hi -a CompIcon>img                max-width: 16px; max-height: 16px; vertical-align: middle;
+hi -a CompItem                    font-size: 9pt; background: black;
+hi -a CompItem>*                  padding: 0em .5em;
 
-hi CompItem[selected]					color: black; background: orangered;
-hi CompLess										text-align: center; height: 0; line-height: 1ex; padding-top: 1ex; font-size: 18pt;
-hi CompLess::after						content: "\2303" /* Unicode up arrowhead */
-hi CompMore										text-align: center; height: 0; line-height: 1ex; margin-bottom: -.5ex; font-size: 18pt;
-hi CompMore::after						content: "\2304" /* Unicode down arrowhead */
-hi CompMsg										font-style: italic; margin-left: 16px;
-hi CompResult									width: 45%; overflow: hidden;font-size: 9pt; font-family: Inconsolata; font-weight: normal;
-hi CompTitle									color: gold; background: black; font-weight: bold; font-size: 11pt;
-hi CompTitle>*								padding: 0 1ex;
-hi ErrorMsg										color: antiquewhite; background: maroon; 
-hi Filter											color: lightgoldenrodyellow; background: orange;
-hi FrameIndicator							background-color: #cd5c5c; opacity: 0.5; z-index: 999; position: fixed; top: 0; bottom: 0; left: 0; right: 0;
-hi Function										color: navy;
-hi Gradient										height: 1px; margin-bottom: -1px; margin-top: -1px;
-hi GradientLeft								background-color: gold;
-hi GradientRight							background-color: goldenrod;
-hi Hint												font-family: Inconsolata; font-size: 9pt; font-weight: normal; color: antiquewhite; background-color: red; border-width: 1px; border-color: #e9967a; border-style: solid; padding: 1px 4px; z-index: 1; opacity: 0.9;
-hi Hint::after								content: attr(number);
-hi HintActive									background: chartreuse; color: black;
-hi HintElem										background-color: yellow; color: #000D18;
-hi HintImage									opacity: .5;
+hi -a CompItem[selected]          background: orangered;
+hi -a CompLess                    text-align: center; height: 0; line-height: .5em; padding-top: .5em; font-size: 18pt;
+hi -a CompLess::after             content: "\2303" /* Unicode up arrowhead */
+hi -a CompMore                    text-align: center; height: 0; line-height: .5em; margin-bottom: -.25em; font-size: 18pt;
+hi -a CompMore::after             content: "\2304" /* Unicode down arrowhead */
+hi -a CompMsg                     font-style: italic; margin-left: 16px;
+hi -a CompResult                  width: 45%; overflow: hidden; font-size: 9pt; font-family: Inconsolata; font-weight: normal;
+hi -a CompTitle                   color: gold; background: black; font-weight: bold; font-size: 11pt;
+hi -a CompTitle>*                 padding: 0 .5em;
+hi -a ErrorMsg                    color: antiquewhite; background: maroon; 
+hi -a Filter                      color: lightgoldenrodyellow; background: orange;
+hi -a FrameIndicator              background-color: #cd5c5c; opacity: 0.5; z-index: 999; position: fixed; top: 0; bottom: 0; left: 0; right: 0;
+hi -a Function                    color: navy;
+hi -a Gradient                    height: 1px; margin-bottom: -1px; margin-top: -1px;
+hi -a GradientLeft                background-color: gold;
+hi -a GradientRight               background-color: goldenrod;
+hi -a Hint                        font-family: Inconsolata; font-size: 9pt; font-weight: normal; color: antiquewhite; background-color: red; border-width: 1px; border-color: #e9967a; border-style: solid; padding: 1px 4px; z-index: 1; opacity: 0.9;
+hi -a Hint::after                 content: attr(number);
+hi -a HintActive                  background: chartreuse; color: black;
+hi -a HintElem                    background-color: yellow; color: #000D18;
+hi -a HintImage                   opacity: .5;
 
-hi Indicator									color: #ff00ff;
-hi InfoMsg										color: gold; background: black;
-hi LineNr											color: orange; background: #242421;
-hi Message										white-space: normal; min-width: 100%; padding-left: 2em; text-indent: -2em; display: block;
-hi ModeMsg										color: gold; background: black;
-hi MoreMsg										color: gold; background: darkslategrey;
-hi NonText										color: #a9a9a9; min-height: 16px; padding-left: 2px;
-hi Normal											color: goldenrod; background: black;
-hi Null												color: #94BFF3;
-hi Number											color: #94BFF3;
-hi Object											color: maroon;
-hi Preview										color: gray;
-hi Question										color: antiquewhite; background-color: red;
-hi Search											font-size: inherit; padding: 1px; color: #ffffff; background-color: #ff8c00;
-hi StatusLine									color: #aacf53; background: #302833; font-size: 9pt; font-family: Inconsolata; font-weight: normal; padding: 0px 5px; min-height: 24px; border-style: solid; border-width: 3px; border-color: #aacf53;
-hi StatusLineBroken						color: #ffffff; background: #ff0000; font-size: 9pt; font-family: Inconsolata;  font-weight: normal; min-height: 24px; padding: 0px 5px; border-style: solid; border-width: 3px; border-color: maroon;
-hi StatusLineSecure						color: black; background: #90ee90; font-size: 9pt; font-family: Inconsolata; font-weight: normal; min-height: 24px; padding: 0px 5px; border-style: solid; border-width: 3px; border-color: green;
-hi StatusLineExtended					color: #d3d3d3; background: #006400; font-size: 9pt; font-family: Inconsolata; font-weight: normal; min-height: 24px; padding: 0px 5px; border-style: solid; border-width: 3px; border-color: green; 
-hi String											color: darkslategrey;
-hi TabIconNumber				font-weight: normal; color: #DCDCCD; text-align: center; text-shadow: black -1px 0 1px, black 0 1px 1px, black 1px 0 1px, black 0 -1px 1px;
-hi TabNumber									font-weight: bold; margin: 0; padding-right: .3ex;
-hi Tag												color: #94BFF3;
-hi Title											color: gold; background: darkslategrey; font-weight: bold;
-hi URL												text-decoration: none; color: #ffa500; background: inherit;
-hi URL:hover									text-decoration: underline; cursor: pointer;
-hi WarningMsg									color: #CC9393; background: #242421;
-hi TabText										font-size: 8pt; font-family: Inconsolata;
+hi -a Indicator                   color: #ff00ff;
+hi -a LineNr                      color: orange; background: #242421;
+hi -a Message                     white-space: normal; min-width: 100%; padding-left: 2em; text-indent: -2em; display: block;
+hi -a ModeMsg                     color: gold; background: black; font-size: 9pt; font-family: Inconsolata;
+hi -a MoreMsg                     color: gold; background: darkslategrey; font-size: 9pt; font-family: Inconsolata;
+hi -a InfoMsg                     color: gold; background: black; font-size: 9pt; font-family: Inconsolata;
+hi -a NonText                     color: #a9a9a9; padding-left: 2px;
+hi -a Normal                      color: goldenrod; background: black;
+hi -a Null                        color: #94BFF3;
+hi -a Number                      color: #94BFF3;
+hi -a Object                      color: #ffcc00;
+hi -a Preview                     color: gray;
+hi -a Question                    color: antiquewhite; background-color: red;
+hi -a Search                      font-size: inherit; padding: 1px; color: #ffffff; background-color: #ff8c00;
+hi -a StatusLine                  color: #aacf53; background: #302833; font-size: 9pt; font-family: Inconsolata; font-weight: normal; padding: 0px 0px; min-height: 24px; border-style: solid; border-width: 2px; border-color: #aacf53;
+hi -a StatusLineBroken            color: #ffffff; background: #ff0000; font-size: 9pt; font-family: Inconsolata;  font-weight: normal; min-height: 24px; padding: 0px 5px; border-style: solid; border-width: 3px; border-color: maroon;
+hi -a StatusLineSecure            color: black; background: #90ee90; font-size: 9pt; font-family: Inconsolata; font-weight: normal; min-height: 24px; padding: 0px 5px; border-style: solid; border-width: 3px; border-color: green;
+hi -a StatusLineExtended          color: #d3d3d3; background: #006400; font-size: 9pt; font-family: Inconsolata; font-weight: normal; min-height: 24px; padding: 0px 5px; border-style: solid; border-width: 3px; border-color: green; 
+hi -a String                      color: darkslategrey;
+hi -a TabIconNumber               font-weight: normal; color: #DCDCCD; text-align: center; text-shadow: black -1px 0 1px, black 0 1px 1px, black 1px 0 1px, black 0 -1px 1px;
+hi -a TabNumber                   font-weight: bold; margin: 0; padding-right: .3ex;
+hi -a Tag                         color: #94BFF3;
+hi -a Title                       color: gold; background: darkslategrey; font-weight: bold;
+hi -a URL                         text-decoration: none; color: #ffa500; background: inherit;
+hi -a URL:hover                   text-decoration: underline; cursor: pointer;
+hi -a WarningMsg                  color: #CC9393; background: #242421;
+hi -a TabText                     font-size: 8pt; font-family: Inconsolata;
 
-hi HelpHead										color: #6495ed;
-hi HelpInfoLabel							color: #ffa500;
-hi HelpSpec										color: #ff8c00;
+hi -a HelpHead                    color: #6495ed;
+hi -a HelpInfoLabel               color: #ffa500;
+hi -a HelpSpec                    color: #ff8c00;
 " }}}
 """ TABS {{{
 style -name tab chrome://* <<EOM
 
 /* Tab container. */
 .tabbrowser-tabs {
-	margin-top: 1px !important;
-	margin-bottom: -0px !important; /* Flush with statusbar. */
-	border-top: 0px solid !important; /* Top flush. */
-	padding: 0px !important; /* Tabs flush with sides. */
+  margin-top: 1px !important;
+  margin-bottom: -0px !important; /* Flush with statusbar. */
+  border-top: 0px solid !important; /* Top flush. */
+  padding: 0px !important; /* Tabs flush with sides. */
 }
 
-/* Tabs themselves. */
-#content tab:not([selected]) {
-	/* background-color: #302833 !important; */
+/* Tab text. */
+.tabbrowser-tab {
+  font-family: Inconsolata !important;
+  font-weight: normal !important;
 }
 
+/* Selected tab text. */
 .tabbrowser-tab[selected="true"] {
-	font-weight: bold !important;
+  font-family: Inconsolata !important;
+  font-weight: bold !important;
 }
 
 /* URL Bar */
 #urlbar {
-	font-family: Inconsolata !important;
-	font-size: 8pt !important;
+  font-family: Inconsolata !important;
+  font-size: 8pt !important;
 }
 
 EOM
@@ -104,12 +108,12 @@ EOM
 style -name statusbar chrome://* <<EOM
 
 #status-bar statusbarpanel {
-	padding: 1px 4px !important;
+  padding: 1px 3px !important; /* Space around icons in statusbar */
 }
 
 statusbarpanel>* {
-	margin: 1px !important;
-	padding: 0px !important;
+  margin: 1px !important; /* Statusbar icon container. */
+  padding: 0px;
 }
 
 EOM
