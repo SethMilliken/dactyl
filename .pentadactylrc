@@ -45,6 +45,7 @@ cmap <C-l> <ESC>:echo "Reset"<CR>
 map <M-o> :open ~/<CR>
 
 map <C-e> :open insta<CR>|:echo "Saving to Instapaper..."<CR>
+map <C-y>a :feedkeys! a -tags=<CR>
 
 " map <M-y> :js alert("This is an example of calling javascript from a map.")<CR>
 " map <M-y> :js inputHintMode();<CR>:echo ""<CR>
