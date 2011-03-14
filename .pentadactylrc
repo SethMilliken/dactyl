@@ -4,14 +4,14 @@ silent colorscheme araxia
 set activate=downloads,help,tabopen,homepage,extoptions,bookmarks,addons
 " set activate-=paste,diverted,links
 set editor="~/bin/vimperator"
-set guioptions=BMs
+set guioptions=BMNs
 set hinttimeout=500
 set incfind
 set hlfind
 set maxitems=20
 set newtab=all
 set runtimepath=~/.pentadactyl
-set visualbell
+set novisualbell
 set hintinputs+=name
 set wildmode=list:longest,full
 set hintkeys=1234567890
