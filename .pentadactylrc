@@ -23,7 +23,7 @@ set hintkeys=1234567890
 " set wildignore=...
 " set hintkeys=asdfghjkl;
 set jsdebugger
-set strictfocus
+set strictfocus=*:moderate
 set verbose=0
 " don't show autocomplete list until <Tab>
 set autocomplete=
@@ -54,9 +54,13 @@ map <C-y>a :feedkeys! a -tags=<CR>
 
 "map <C-A-z> normal "f5gT<A-d>d"
 
+style -n black-about-blank chrome://* xul|browser { background-color: black; }
+
 " New Hintmode ;e for form elements only.
 set extendedhinttags&
-set extendedhinttags+=[e]:'//input[not(@type=''hidden'')] | //xhtml:input[not(@type=''hidden'')] | //textarea | //xhtml:textarea | //button | //xhtml:button | //select | //xhtml:select'
+set extendedhinttags+=[e]:input:not([type=hidden]),textarea,button,select
+
+" Form fields only hint mode
 javascript <<EOF
 (function(){
 if (!hints.modes["e"]){
