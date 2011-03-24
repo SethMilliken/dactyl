@@ -15,6 +15,7 @@ set novisualbell
 set hintinputs+=name
 set wildmode=list:longest,full
 set hintkeys=1234567890
+set passunknown=base
 " set wildoptions=auto,sort
 "" Experimental
 " set passkeys=...
@@ -45,9 +46,11 @@ cmap <C-l> <ESC>:echo "Reset"<CR>
 map <M-o> :open ~/<CR>
 
 map <C-e> :open insta<CR>|:echo "Saving to Instapaper..."<CR>
-map <C-y>a :feedkeys! a -tags=<CR>
+map <M-d> :feedkeys! a -tags=<CR>
+map <M-b> :bmarks -tags=
+map <S-M-b> :bmarks! -T=
 
-" map <M-y> :js alert("This is an example of calling javascript from a map.")<CR>
+map <C-y>t -js alert("This is an example of calling javascript from a map.");
 " map <M-y> :js inputHintMode();<CR>:echo ""<CR>
 
 " Note: Move tab forward, then back (<C-S-[>, <C-S-]>) to recover from dreaded "---EMBED---" lock.

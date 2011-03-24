@@ -36,7 +36,7 @@ hi -a Function                          color: #ffeeee;
 hi -a Gradient                          height: 1px; margin-bottom: -1px; margin-top: -1px;
 hi -a GradientLeft                      background-color: gold;
 hi -a GradientRight                     background-color: goldenrod;
-hi -a Hint                              font-family: Inconsolata; font-size: 9pt; font-weight: normal; color: antiquewhite; background-color: red; border-width: 1px; border-color: #e9967a; border-style: solid; padding: 1px 4px; z-index: 1; opacity: 0.9;
+hi -a Hint                                 font-family: Inconsolata; font-size: 9pt; font-weight: normal; color: antiquewhite; background-color: red; border-width: 1px; border-color: #e9967a; border-style: solid; padding: 1px 4px; z-index: 1; opacity: 0.9;
 hi -a Hint::after                       content: attr(number);
 hi -a HintActive                        background: #660066; color: #ffffff;
 hi -a HintElem                          background-color: yellow; color: #000D18;
@@ -130,4 +130,4 @@ statusbarpanel>* {
 
 EOM
 " }}}
-" vim:ts=2
+" vim:ts=2:ft=vim.javascript
