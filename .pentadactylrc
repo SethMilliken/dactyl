@@ -56,8 +56,12 @@ map <C-y>t -js alert("This is an example of calling javascript from a map.");
 " Note: Move tab forward, then back (<C-S-[>, <C-S-]>) to recover from dreaded "---EMBED---" lock.
 
 "map <C-A-z> normal "f5gT<A-d>d"
+set guioptions+=T
 
 style -n black-about-blank chrome://* xul|browser { background-color: black; }
+
+style -n feed-on chrome://* #feed-button:not([disabled="true"]) { background-color: rgba(250,130,0, 1) !important; }
+style -n feed-off chrome://* #feed-button:not([disabled="true"]):hover { background-color: rgba(255,170,0, 1) !important; border-color: rgba(250,130,0,.6) !important; }
 
 " New Hintmode ;e for form elements only.
 set extendedhinttags&
