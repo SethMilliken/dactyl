@@ -41,7 +41,7 @@ hi -a Hint[active]                      color: black; background-color: antiquew
 hi -a Hint::after                       content: attr(number);
 hi -a HintActive                        background-color: orange; color: black;
 hi -a HintElem                          background-color: yellow; color: #000D18;
-hi -a HintImage                         opacity: .5;
+hi -a HintImage                         opacity: .9;
 
 hi -a Indicator                         color: #660066;
 hi -a LineNr                            color: orange; background: #242421;

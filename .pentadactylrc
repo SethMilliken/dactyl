@@ -3,7 +3,7 @@ silent colorscheme araxia
 
 set activate=downloads,help,tabopen,homepage,extoptions,bookmarks,addons
 " set activate-=paste,diverted,links
-set editor="~/bin/vimperator"
+set editor="~/bin/vimperator +<line> <file>"
 set guioptions=BMNs
 set hinttimeout=500
 set incfind
@@ -51,6 +51,7 @@ map <M-b> :bmarks -tags=
 map <S-M-b> :bmarks! -T=
 
 map <C-y>t -js alert("This is an example of calling javascript from a map.");
+
 " map <M-y> :js inputHintMode();<CR>:echo ""<CR>
 
 " Note: Move tab forward, then back (<C-S-[>, <C-S-]>) to recover from dreaded "---EMBED---" lock.
@@ -73,6 +74,14 @@ javascript <<EOF
 if (!hints.modes["e"]){
     hints.addMode("e", "Focus form fields", function (elem) { buffer.followLink(elem, dactyl.CURRENT_TAB); });
 }
+})();
+EOF
+
+" Add profilename to statusbar
+javascript <<EOF
+(function() {
+    let elem = statusline.widgets.progress;
+    elem.parentNode.insertBefore(util.xmlToDom(<label value={dactyl.profileName}></label>, document), elem);
 })();
 EOF
 
@@ -99,4 +108,5 @@ javascript <<EOF
 })();
 EOF
 
-" vim:ft=vimperator:
+
+" vim:ft=pentadactyl:
