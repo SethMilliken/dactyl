@@ -39,6 +39,11 @@ imap <C-c> <Esc>
 cmap <C-c> <Esc>
 vmap <C-c> <Esc>
 
+" Swap tab closing behavior
+" noremap d D
+" noremap D d
+" ...or not. mb just retrain to use D when i want D.
+
 map <C-l> <ESC>:set nohlfind<CR>:echo "Reset"<CR>
 imap <C-l> <ESC>:echo "Reset"<CR>
 cmap <C-l> <ESC>:echo "Reset"<CR>
