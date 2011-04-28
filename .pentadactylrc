@@ -62,7 +62,6 @@ map <C-y>t -js alert("This is an example of calling javascript from a map.");
 " Note: Move tab forward, then back (<C-S-[>, <C-S-]>) to recover from dreaded "---EMBED---" lock.
 
 "map <C-A-z> normal "f5gT<A-d>d"
-set guioptions+=T
 
 style -n black-about-blank chrome://* xul|browser { background-color: black; }
 
@@ -86,7 +85,7 @@ EOF
 javascript <<EOF
 (function() {
     let elem = statusline.widgets.progress;
-    elem.parentNode.insertBefore(util.xmlToDom(<label value={dactyl.profileName}></label>, document), elem);
+    //elem.parentNode.insertBefore(util.xmlToDom(<label value={dactyl.profileName}></label>, document), elem);
 })();
 EOF
 
@@ -113,5 +112,7 @@ javascript <<EOF
 })();
 EOF
 
+" Set accesskey to alt
+javascript prefs.set("ui.key.generalAccessKey", 18);
 
 " vim:ft=pentadactyl:

@@ -2,7 +2,7 @@
 "
 " Name:   araxia
 " Author: Seth Milliken <seth@araxia.net>
-" Last Change: 2011-02-14
+" Last Change: 2011-04-27
 "
 " echo ({ string: "string", object: this, number: 12, boolean: true, xml: <x><m/><l/></x>, null: null, element: document.documentElement })
 """ COLORSCHEME {{{
@@ -36,7 +36,7 @@ hi -a Function                          color: #ffeeee;
 hi -a Gradient                          height: 1px; margin-bottom: -1px; margin-top: -1px;
 hi -a GradientLeft                      background-color: gold;
 hi -a GradientRight                     background-color: goldenrod;
-hi -a Hint                                 font-family: Inconsolata; font-size: 9pt; font-weight: normal; color: antiquewhite; background-color: red; border-width: 1px; border-color: #e9967a; border-style: solid; padding: 1px 4px; z-index: 1; opacity: 0.7;
+hi -a Hint                                 font-family: Inconsolata; font-size: 9pt; font-weight: normal; color: antiquewhite; background-color: red; border-width: 1px; border-color: #e9967a; border-style: solid; padding: 1px 4px; z-index: 1; opacity: 0.9;
 hi -a Hint[active]                      color: black; background-color: antiquewhite;
 hi -a Hint::after                       content: attr(number);
 hi -a HintActive                        background-color: orange; color: black;
@@ -60,7 +60,7 @@ hi -a Search                            font-size: inherit; padding: 1px; color:
 hi -a StatusLine                        color: #aacf53; background: #000000; x-background: #302833; font-size: 9pt; font-family: Inconsolata; font-weight: normal; padding: 0px 0px; min-height: 24px; border-style: solid; border-width: 2px; border-color: #aacf53;
 hi -a StatusLineBroken                  color: #ffffff; background: #ff0000; font-size: 9pt; font-family: Inconsolata;  font-weight: normal; min-height: 24px; padding: 0px 5px; border-style: solid; border-width: 3px; border-color: maroon;
 hi -a StatusLineSecure                  color: black; background: #90ee90; font-size: 9pt; font-family: Inconsolata; font-weight: normal; min-height: 24px; padding: 0px 5px; border-style: solid; border-width: 3px; border-color: green;
-hi -a StatusLineExtended                color: #d3d3d3; background: #006400; font-size: 9pt; font-family: Inconsolata; font-weight: normal; min-height: 24px; padding: 0px 5px; border-style: solid; border-width: 3px; border-color: green; 
+hi -a StatusLineExtended                color: #d3d3d3; background: #006400; font-size: 9pt; font-family: Inconsolata; font-weight: normal; min-height: 24px; padding: 0px 5px; border-style: solid; border-width: 3px; border-color: green;
 hi -a String                            color: #aacf53;
 hi -a TabIconNumber                     font-weight: normal; color: #000000; text-shadow: #ffffff 0 0 0; padding-left: 8px; padding-top: 8px;
 hi -a TabNumber                         font-weight: bold;
@@ -79,32 +79,35 @@ hi -a HelpSpec                          color: #ff8c00;
 """ TABS {{{
 style -name araxia-chrome chrome://* <<EOM
 
+/* Status bar font */
 #status-bar {
-    font-size: 9pt !important;
-    font-family: Inconsolata !important;
+  font-size: 9pt !important;
+  font-family: Inconsolata !important;
 }
 
 #feed-button:not([disabled="true"]) {
-    background-color: rgba(250,130,0, 1) !important;
+  background-color: rgba(250,130,0, 1) !important;
 }
 
 #feed-button:not([disabled="true"]):hover {
-    background-color: rgba(255,170,0, 1) !important;
-    border-color: rgba(250,130,0,.6) !important;
+  background-color: rgba(255,170,0, 1) !important;
+  border-color: rgba(250,130,0,.6) !important;
 }
 
 /* Tab container. */
 .tabbrowser-tabs {
-  margin-top: 1px !important;
-  margin-bottom: 0px !important; /* Flush with statusbar. */
-  border-top: 0px solid !important; /* Top flush. */
-  padding: 0px !important; /* Tabs flush with sides. */
+  margin-top:       1px !important;
+  margin-bottom:    0px !important;         /* Flush with statusbar. */
+  border-top:       0px solid !important;   /* Top flush. */
+  padding:          0px !important;         /* Tabs flush with sides. */
 }
 
 /* Tab text. */
 .tabbrowser-tab {
   font-family: Inconsolata !important;
+  font-size: 9pt !important;
   font-weight: normal !important;
+  text-shadow: none !important;
 }
 
 /* Selected tab text. */
@@ -113,14 +116,14 @@ style -name araxia-chrome chrome://* <<EOM
   font-weight: bold !important;
 }
 
-/* Tree Style Tab disclosure triangle. */ 
+/* Tree Style Tab disclosure triangle. */
 .treestyletab-twisty-container {
-    padding-left: 2px;
+  padding-left: 2px;
 }
 
 /* Number added by pentadactyle set guioptions+=N */
 .dactyl-tab-icon-number {
-    font-size: 6pt !important;
+  font-size: 6pt !important;
 }
 
 /* URL Bar */
@@ -129,6 +132,95 @@ style -name araxia-chrome chrome://* <<EOM
   font-size: 8pt !important;
 }
 
+EOM
+" }}}
+""" Miscellaneous {{{
+style -agent -name misc chrome://* <<EOM
+
+/* Give RSS Feed Button Some Contrast */
+#feed-button:not([disabled="true"]) {
+  background-color: rgba(250,130,0, 1) !important;
+}
+
+#feed-button:not([disabled="true"]):hover {
+  background-color: rgba(255,170,0, 1) !important;
+  border-color: rgba(250,130,0,.6) !important;
+}
+
+EOM
+" }}}
+""" Menus {{{
+style -agent -name menus chrome://* <<EOM
+
+/* =============== Context Menu Options Removal                               */
+/* ======== Remove Items In Context Menu: WEB PAGE                            */
+/* #context-back,                        /* "Back"                            */
+/* #context-forward,                     /* "Forward"                         */
+/* #context-reload,                      /* "Reload"                          */
+   #context-stop,                        /* "Stop"                            */
+/* #context-sep-stop,                    /* Sep Below "Stop"                  */
+   #context-bookmarkpage,                /* "Bookmark This Page..."           */
+/* #context-savepage,                    /* "Save Page As..."                 */
+   #context-sendpage,                    /* "Send Page..."                    */
+/* ======== Remove Items In Context Menu: LINKS                               */
+   #context-openlink,                    /* "Open Link in New Window"         */
+/* #context-openlinkintab,               /* "Open Link in New Tab"            */
+/* #context-sep-open,                    /* Sep Below "Open Link in New..."   */
+/* #context-bookmarklink,                /* "Bookmark This Link..."           */
+/* #context-savelink,                    /* "Save Link to Disk..."            */
+   #context-sendlink,                    /* "Send Link..."                    */
+/* #context-copylink,                    /* "Copy Link Location"              */
+/* #context-copyemail,                   /* "Copy Email Address"              */
+/* #context-sep-copylink,                /* Sep Below Link Items              */
+/* ======== Remove Items In Context Menu: IMAGES                              */
+   #context-viewimage,                   /* "View Image"                      */
+/* #context-copyimage,                   /* "Copy Image Location"             */
+   #context-copyimage-contents,          /* "Copy Image to Clipboard"         */
+   #context-sep-copyimage,               /* Sep Below "Copy Image location"   */
+/* #context-saveimage,                   /* "Save Image As..."                */
+   #context-sendimage,                   /* "Send Image..."                   */
+   #context-setWallpaper,                /* "Set As Wallpaper"                */
+   #context-blockimage,                  /* "Block Images from this Server"   */
+   #context-sep-viewbgimage,             /* Sep Above "View Background Image" */
+   #context-viewbgimage,                 /* "View Background Image"           */
+/* ======== Remove Items In Context Menu: TEXT                                */
+/* #context-undo,                        /* "Undo"                            */
+/* #context-sep-undo,                    /* Sep Below "Undo"                  */
+/* #context-cut,                         /* "Cut"                             */
+/* #context-copy,                        /* "Copy"                            */
+/* #context-paste,                       /* "Paste"                           */
+/* #context-delete,                      /* "Delete"                          */
+/* #context-sep-paste,                   /* "Sep Below "Delete"               */
+   #context-selectall,                   /* "Select All"                      */
+/* #context-sep-selectall,               /* "Sep Below "Select All"           */
+   #context-searchselect,                /* "Web Search  for..."              */
+   #context-viewpartialsource-selection, /* "View Selection Source"           */
+/* ======== Remove Items In Context Menu: EXTRA                               */
+/* #frame-sep,                           /* Sep Above "This Frame"            */
+/* #frame,                               /* "This Frame"                      */
+/* #context-viewpartialsource-mathml,    /* "View MathML Source"              */
+/* #context-sep-properties,              /* Sep Above Properties Items        */
+/* #context-viewsource,                  /* "View Page Source"                */
+   #context-viewinfo,                    /* "View Page Info"                  */
+   #context-metadata                     /* "Properties"                      */
+     { display: none; !important; }
+
+/* =============== Remove Items In Context Menu: BOOKMARKS */
+/* #bookmarks-context-menu menuitem[label="Expand"],
+/* #bookmarks-context-menu menuitem[label="Open"],
+/* #bookmarks-context-menu menuitem[label="Open in Tabs"],
+/* #bookmarks-context-menu menuitem[label="Manage Folder"] + menuseparator, */
+/* #bookmarks-context-menu menuitem[label="New Folder..."] + menuseparator,
+/* #bookmarks-context-menu menuitem[label="Open in New Window"],
+/* #bookmarks-context-menu menuitem[label="Open in New Tab"],
+/* #bookmarks-context-menu menuitem[label="Open in New Tab"] + menuseparator,
+/* #bookmarks-context-menu menuitem[label="Cut"],
+/* #bookmarks-context-menu menuitem[label="Copy"],
+/* #bookmarks-context-menu menuitem[label="Paste"],
+/* #bookmarks-context-menu menuitem[label="Paste"] + menuseparator */
+/*   { display: none; } */
+
+/* =============== End Context Menu Options Removal */
 EOM
 " }}}
 """ STATUS BAR Firefox 3.x {{{
@@ -145,4 +237,4 @@ statusbarpanel>* {
 
 EOM
 " }}}
-" vim:ts=2:ft=vim.javascript
+" vim:sts=2:sw=2:ft=vim.javascript
