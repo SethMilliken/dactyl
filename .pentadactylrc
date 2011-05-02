@@ -84,8 +84,12 @@ EOF
 " Add profilename to statusbar
 javascript <<EOF
 (function() {
-    let elem = statusline.widgets.progress;
-    //elem.parentNode.insertBefore(util.xmlToDom(<label value={dactyl.profileName}></label>, document), elem);
+    var profilename = document.createElement("label");
+    profilename.setAttribute("id", "profilename");
+    profilename.setAttribute("class", "plain");
+    profilename.setAttribute("value", " [" + dactyl.profileName + "]");
+    document.getElementById("dactyl-statusline-field-container")
+    .insertBefore(profilename, document.getElementById("dactyl-statusline-field-zoomlevel").nextSibling);
 })();
 EOF
 
