@@ -33,25 +33,16 @@ set autocomplete=
 autocmd Fullscreen .* :js document.getElementById("status-bar").setAttribute("moz-collapsed", false)
 
 " Keybinding fixes
-map <M-m> :emenu Window.Zoom<CR>
-imap <M-m> <Esc>:emenu Window.Zoom<CR>
-imap <C-c> <Esc>
-cmap <C-c> <Esc>
-vmap <C-c> <Esc>
+map <M-m> -modes=n,v,i,t,c -ex emenu Window.Zoom
+map <C-c> -modes=n,v,i,t,c <Esc>
+map <CR> -modes=t <Esc><CR>
 
-" Swap tab closing behavior
-" noremap d D
-" noremap D d
-" ...or not. mb just retrain to use D when i want D.
+map <C-l> -modes=n,v,i,t,c -ex set nohlfind | echo "Reset"
 
-map <C-l> <ESC>:set nohlfind<CR>:echo "Reset"<CR>
-imap <C-l> <ESC>:echo "Reset"<CR>
-cmap <C-l> <ESC>:echo "Reset"<CR>
+map <M-o> -ex open ~/
 
-map <M-o> :open ~/<CR>
-
-map <C-e> :open insta<CR>|:echo "Saving to Instapaper..."<CR>
-map <M-d> :feedkeys! a -tags=<CR>
+map <C-e> -ex open insta | echo "Saving to Instapaper..."
+map <M-d> -ex feedkeys! a -tags=
 map <M-b> :bmarks -tags=
 map <S-M-b> :bmarks! -T=
 
