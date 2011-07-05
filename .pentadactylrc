@@ -33,6 +33,7 @@ set autocomplete=
 autocmd Fullscreen .* :js document.getElementById("status-bar").setAttribute("moz-collapsed", false)
 
 " Keybinding fixes
+map <C-A-f> -modes=n,v,i,t,c -ex emenu Tools.HttpFox.Toggle HttpFox
 map <M-m> -modes=n,v,i,t,c -ex emenu Window.Zoom
 map <C-c> -modes=n,v,i,t,c <Esc>
 map <CR> -modes=t <Esc><CR>
