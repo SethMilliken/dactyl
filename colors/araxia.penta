@@ -121,7 +121,7 @@ style -name araxia-chrome chrome://* <<EOM
   padding-left: 2px;
 }
 
-/* Number added by pentadactyle set guioptions+=N */
+/* Number added by pentadactyl set guioptions+=N */
 .dactyl-tab-icon-number {
   font-size: 6pt !important;
 }
