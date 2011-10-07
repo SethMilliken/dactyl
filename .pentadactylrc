@@ -79,7 +79,7 @@ javascript <<EOF
     var profilename = document.createElement("label");
     profilename.setAttribute("id", "profilename");
     profilename.setAttribute("class", "plain");
-    profilename.setAttribute("value", " [" + dactyl.profileName + "]");
+    profilename.setAttribute("value", " [" + config.profileName + "]");
     document.getElementById("dactyl-statusline-field-container")
     .insertBefore(profilename, document.getElementById("dactyl-statusline-field-zoomlevel").nextSibling);
 })();
