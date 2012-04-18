@@ -37,12 +37,13 @@ map <C-A-f> -modes=n,v,i,t,c -ex emenu Tools.HttpFox.Toggle HttpFox
 map <M-m> -modes=n,v,i,t,c -ex emenu Window.Zoom
 map <C-c> -modes=n,v,i,t,c <Esc>
 map <CR> -modes=t <Esc><CR>
+map <BS> <Nop>
 
 map <C-l> -modes=n,v,i,t,c -ex set nohlfind | echo "Reset"
 
 map <M-o> -ex open ~/
 
-map <C-e> -ex open insta | echo "Saving to Instapaper..."
+map <C-e> -ex feedkeys! a -keyword=
 map <M-d> -ex feedkeys! a -tags=
 map <M-b> :bmarks -tags=
 map <S-M-b> :bmarks! -T=
@@ -55,12 +56,14 @@ map <C-y>t -js alert("This is an example of calling javascript from a map.");
 
 "map <C-A-z> normal "f5gT<A-d>d"
 
+" Background for blank page
 style -n black-about-blank chrome://* xul|browser { background-color: black; }
 
+" RSS Icon 
 style -n feed-on chrome://* #feed-button:not([disabled="true"]) { background-color: rgba(250,130,0, 1) !important; }
 style -n feed-off chrome://* #feed-button:not([disabled="true"]):hover { background-color: rgba(255,170,0, 1) !important; border-color: rgba(250,130,0,.6) !important; }
 
-" New Hintmode ;e for form elements only.
+" New Hintmode `;e` for form elements only.
 set extendedhinttags&
 set extendedhinttags+=[e]:input:not([type=hidden]),textarea,button,select
 
@@ -86,6 +89,7 @@ javascript <<EOF
 EOF
 
 " Add RSS icon to statusbar
+" Requires `:dia customizetoolbar` and adding the RSS icon manually first
 javascript <<EOF
 (function(){
 var feedPanel = document.createElement("statusbarpanel");
@@ -111,4 +115,5 @@ EOF
 " Set accesskey to alt
 javascript prefs.set("ui.key.generalAccessKey", 18);
 
+" `:rehash` to reload
 " vim:ft=pentadactyl:

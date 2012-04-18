@@ -9,9 +9,9 @@
 hi -a Bell                              background-color: black; border: 0 none;
 hi -a Boolean                           color: #CC9393;
 " padding: vertical-offset horizontal-offset
-hi -a CmdLine                           font-family: Inconsolata; font-size: 9pt; border-style: solid; border-width: 1px; border-color: goldenrod;
+hi -a CmdLine                           font-family: "Ubuntu Mono", Inconsolata; font-size: 9pt; border-style: solid; border-width: 1px; border-color: goldenrod;
 
-hi -a CmdOutput                         white-space: pre; font-family: Inconsolata; font-size: 9pt;
+hi -a CmdOutput                         white-space: pre; font-family: "Ubuntu Mono", Inconsolata; font-size: 9pt;
 hi -a CompDesc                          color: skyblue; width: 50%; font-size: 9pt;
 " Space between groups in completion
 hi -a CompGroup:not(:first-of-type)     margin-top: .2em;
@@ -26,7 +26,7 @@ hi -a CompLess::after                   content: "\2303" /* Unicode up arrowhead
 hi -a CompMore                          text-align: center; height: 0; line-height: .5em; margin-bottom: -.25em; font-size: 18pt;
 hi -a CompMore::after                   content: "\2304" /* Unicode down arrowhead */
 hi -a CompMsg                           font-style: italic; margin-left: 16px;
-hi -a CompResult                        width: 45%; overflow: hidden; font-size: 9pt; font-family: Inconsolata; font-weight: normal;
+hi -a CompResult                        width: 45%; overflow: hidden; font-size: 9pt; font-family: "Ubuntu Mono", Inconsolata; font-weight: normal;
 hi -a CompTitle                         color: gold; background: black; font-weight: bold; font-size: 11pt;
 hi -a CompTitle>*                       padding: 0 .5em;
 hi -a ErrorMsg                          color: antiquewhite; background: maroon;
@@ -36,7 +36,7 @@ hi -a Function                          color: #ffeeee;
 hi -a Gradient                          height: 1px; margin-bottom: -1px; margin-top: -1px;
 hi -a GradientLeft                      background-color: gold;
 hi -a GradientRight                     background-color: goldenrod;
-hi -a Hint                                 font-family: Inconsolata; font-size: 9pt; font-weight: normal; color: antiquewhite; background-color: red; border-width: 1px; border-color: #e9967a; border-style: solid; padding: 1px 4px; z-index: 1; opacity: 0.9;
+hi -a Hint                                 font-family: "Ubuntu Mono", Inconsolata; font-size: 9pt; font-weight: normal; color: antiquewhite; background-color: red; border-width: 1px; border-color: #e9967a; border-style: solid; padding: 1px 4px; z-index: 1; opacity: 0.9;
 hi -a Hint[active]                      color: black; background-color: antiquewhite;
 hi -a Hint::after                       content: attr(number);
 hi -a HintActive                        background-color: orange; color: black;
@@ -46,9 +46,9 @@ hi -a HintImage                         opacity: .9;
 hi -a Indicator                         color: #660066;
 hi -a LineNr                            color: orange; background: #242421;
 hi -a Message                           white-space: normal; min-width: 100%; padding-left: 2em; text-indent: -2em; display: block;
-hi -a ModeMsg                           color: gold; background: black; font-size: 9pt; font-family: Inconsolata;
-hi -a MoreMsg                           color: gold; background: darkslategrey; font-size: 9pt; font-family: Inconsolata;
-hi -a InfoMsg                           color: gold; background: black; font-size: 9pt; font-family: Inconsolata;
+hi -a ModeMsg                           color: gold; background: black; font-size: 9pt; font-family: "Ubuntu Mono", Inconsolata;
+hi -a MoreMsg                           color: gold; background: darkslategrey; font-size: 9pt; font-family: "Ubuntu Mono", Inconsolata;
+hi -a InfoMsg                           color: gold; background: black; font-size: 9pt; font-family: "Ubuntu Mono", Inconsolata;
 hi -a NonText                           color: #a9a9a9; padding-left: 2px;
 hi -a Normal                            color: goldenrod; background: black;
 hi -a Null                              color: #ff0000;
@@ -57,10 +57,10 @@ hi -a Object                            color: #ffcc00;
 hi -a Preview                           color: gray;
 hi -a Question                          color: antiquewhite; background-color: red;
 hi -a Search                            font-size: inherit; padding: 1px; color: #ffffff; background-color: #ff8c00;
-hi -a StatusLine                        color: #aacf53; background: #000000; x-background: #302833; font-size: 9pt; font-family: Inconsolata; font-weight: normal; padding: 0px 0px; min-height: 24px; border-style: solid; border-width: 2px; border-color: #aacf53;
-hi -a StatusLineBroken                  color: #ffffff; background: #ff0000; font-size: 9pt; font-family: Inconsolata;  font-weight: normal; min-height: 24px; padding: 0px 5px; border-style: solid; border-width: 3px; border-color: maroon;
-hi -a StatusLineSecure                  color: black; background: #90ee90; font-size: 9pt; font-family: Inconsolata; font-weight: normal; min-height: 24px; padding: 0px 5px; border-style: solid; border-width: 3px; border-color: green;
-hi -a StatusLineExtended                color: #d3d3d3; background: #006400; font-size: 9pt; font-family: Inconsolata; font-weight: normal; min-height: 24px; padding: 0px 5px; border-style: solid; border-width: 3px; border-color: green;
+hi -a StatusLine                        color: #aacf53; background: #000000; x-background: #302833; font-size: 9pt; font-family: "Ubuntu Mono", Inconsolata; font-weight: normal; padding: 0px 0px; min-height: 24px; border-style: solid; border-width: 2px; border-color: #aacf53;
+hi -a StatusLineBroken                  color: #ffffff; background: #ff0000; font-size: 9pt; font-family: "Ubuntu Mono", Inconsolata;  font-weight: normal; min-height: 24px; padding: 0px 5px; border-style: solid; border-width: 3px; border-color: maroon;
+hi -a StatusLineSecure                  color: black; background: #90ee90; font-size: 9pt; font-family: "Ubuntu Mono", Inconsolata; font-weight: normal; min-height: 24px; padding: 0px 5px; border-style: solid; border-width: 3px; border-color: green;
+hi -a StatusLineExtended                color: #d3d3d3; background: #006400; font-size: 9pt; font-family: "Ubuntu Mono", Inconsolata; font-weight: normal; min-height: 24px; padding: 0px 5px; border-style: solid; border-width: 3px; border-color: green;
 hi -a String                            color: #aacf53;
 hi -a TabIconNumber                     font-weight: normal; color: #000000; text-shadow: #ffffff 0 0 0; padding-left: 8px; padding-top: 8px;
 hi -a TabNumber                         font-weight: bold;
@@ -69,7 +69,7 @@ hi -a Title                             color: gold; background: darkslategrey; 
 hi -a URL                               text-decoration: none; color: #ffa500; background: inherit;
 hi -a URL:hover                         text-decoration: underline; cursor: pointer;
 hi -a WarningMsg                        color: #CC9393; background: #242421;
-hi -a TabText                           font-size: 8pt; font-family: Inconsolata;
+hi -a TabText                           font-size: 8pt; font-family: "Ubuntu Mono", Inconsolata;
 
 hi -a HelpHead                          color: #6495ed;
 hi -a HelpInfoLabel                     color: #ffa500;
@@ -82,7 +82,7 @@ style -name araxia-chrome chrome://* <<EOM
 /* Status bar font */
 #status-bar {
   font-size: 9pt !important;
-  font-family: Inconsolata !important;
+  font-family: "Ubuntu Mono", Inconsolata !important;
 }
 
 #feed-button:not([disabled="true"]) {
@@ -104,7 +104,7 @@ style -name araxia-chrome chrome://* <<EOM
 
 /* Tab text. */
 .tabbrowser-tab {
-  font-family: Inconsolata !important;
+  font-family: "Ubuntu Mono", Inconsolata !important;
   font-size: 9pt !important;
   font-weight: normal !important;
   text-shadow: none !important;
@@ -112,7 +112,7 @@ style -name araxia-chrome chrome://* <<EOM
 
 /* Selected tab text. */
 .tabbrowser-tab[selected="true"] {
-  font-family: Inconsolata !important;
+  font-family: "Ubuntu Mono", Inconsolata !important;
   font-weight: bold !important;
 }
 
@@ -128,7 +128,7 @@ style -name araxia-chrome chrome://* <<EOM
 
 /* URL Bar */
 #urlbar {
-  font-family: Inconsolata !important;
+  font-family: "Ubuntu Mono", Inconsolata !important;
   font-size: 8pt !important;
 }
 
