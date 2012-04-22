@@ -83,6 +83,7 @@ javascript <<EOF
     profilename.setAttribute("id", "profilename");
     profilename.setAttribute("class", "plain");
     profilename.setAttribute("value", " [" + config.profileName + "]");
+    profilename.setAttribute("style", "padding: 0px 5px; max-height: 16px;");
     document.getElementById("dactyl-statusline-field-container")
     .insertBefore(profilename, document.getElementById("dactyl-statusline-field-zoomlevel").nextSibling);
 })();
