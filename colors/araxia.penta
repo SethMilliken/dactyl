@@ -62,7 +62,8 @@ hi -a StatusLineBroken                  color: #ffffff; background: #ff0000; fon
 hi -a StatusLineSecure                  color: black; background: #90ee90; font-size: 9pt; font-family: "Ubuntu Mono", Inconsolata; font-weight: normal; min-height: 24px; padding: 0px 5px; border-style: solid; border-width: 3px; border-color: green;
 hi -a StatusLineExtended                color: #d3d3d3; background: #006400; font-size: 9pt; font-family: "Ubuntu Mono", Inconsolata; font-weight: normal; min-height: 24px; padding: 0px 5px; border-style: solid; border-width: 3px; border-color: green;
 hi -a String                            color: #aacf53;
-hi -a TabIconNumber                     font-weight: normal; color: #000000; text-shadow: #ffffff 0 0 0; padding-left: 1em; padding-top: .5em;
+hi -a TabIconNumber                     font-weight: normal; color: #000000; text-shadow: #ffffff 0 0 0; padding-left: 1.1em; padding-top: 1.5em;
+"hi -a TabIconNumber                     font-weight: normal; color: #000000; text-shadow: #ffffff 0 0 0; padding-left: 12px; padding-top: 16px;
 hi -a TabNumber                         font-weight: bold;
 hi -a Tag                               color: #94BFF3;
 hi -a Title                             color: gold; background: darkslategrey; font-weight: bold;
