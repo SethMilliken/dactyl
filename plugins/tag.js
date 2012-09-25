@@ -1,6 +1,8 @@
-"use strict";
-XML.ignoreWhitespace = false;
+/* use strict */
+
 XML.prettyPrinting = false;
+XML.ignoreWhitespace = false;
+
 var INFO =
 <plugin name="tags" version="1.0"
         href="http://araxia.net/"
@@ -12,7 +14,7 @@ var INFO =
     <p>
         Hacking up some tag management shit for pentadactyl.
     </p>
-</plugin>;
+</plugin>
 
 function isBookmarked() {
     return bmsvc().isBookmarked(uri());
