@@ -18,7 +18,6 @@ set hintkeys=1234567890
 set passunknown=base
 " set wildoptions=auto,sort
 "" Experimental
-" set passkeys=...
 " set noinsertmode
 " set showstatuslinks=command
 " set wildignore=...
@@ -56,17 +55,30 @@ map <C-y>t -js alert("This is an example of calling javascript from a map.");
 map <C-w>k -ex feedkeys! gTgt:tabm 1<CR><C-6>
 map <C-w>j -ex feedkeys! gTgt:tabm $<CR><C-6>
 
+" JIRA
+group jira -description 'bindings for JIRA navigation' -locations=janrain.atlassian.net
+nmap -group=jira p <Pass>
+nmap -group=jira h p
+nmap -group=jira n <Pass>
+nmap -group=jira l n
+nmap -group=jira -builtin <S-l> l
+nmap -group=jira <Esc> <Esc>gi<C-v><Esc><Esc>
+nmap -group=jira . <C-v>.
+nmap -group=jira Q fNextfNot<Esc>
+set passkeys+=janrain.atlassian.net:j,k,t,z,sb,st,m,a,e,c
+
+" Set accesskey to alt
+javascript prefs.set("ui.key.generalAccessKey", 18);
 
 " map <M-y> :js inputHintMode();<CR>:echo ""<CR>
 
 " Note: Move tab forward, then back (<C-S-[>, <C-S-]>) to recover from dreaded "---EMBED---" lock.
-
 "map <C-A-z> normal "f5gT<A-d>d"
 
 " Background for blank page
 style -n black-about-blank chrome://* xul|browser { background-color: black; }
 
-" RSS Icon 
+" RSS Icon (must View -> Toolbars -> Customize and add it manually first)
 style -n feed-on chrome://* #feed-button:not([disabled="true"]) { background-color: rgba(250,130,0, 1) !important; }
 style -n feed-off chrome://* #feed-button:not([disabled="true"]):hover { background-color: rgba(255,170,0, 1) !important; border-color: rgba(250,130,0,.6) !important; }
 
@@ -119,9 +131,6 @@ javascript <<EOF
     document.getElementById("status-bar").insertBefore(faviconPanel, document.getElementById("security-button"));
 })();
 EOF
-
-" Set accesskey to alt
-javascript prefs.set("ui.key.generalAccessKey", 18);
 
 " `:rehash` to reload
 " vim:ft=pentadactyl:
