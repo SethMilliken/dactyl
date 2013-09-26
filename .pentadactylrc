@@ -4,7 +4,8 @@ silent colorscheme araxia
 set activate=downloads,help,tabopen,homepage,extoptions,bookmarks,addons
 " set activate-=paste,diverted,links
 set editor="~/bin/vimperator +<line> <file>"
-set guioptions=BMNs
+set guioptions=CcMNs
+"set guioptions+=B " bookmark bar
 set hinttimeout=500
 set incfind
 set hlfind
@@ -32,11 +33,18 @@ set autocomplete=
 autocmd Fullscreen .* :js document.getElementById("status-bar").setAttribute("moz-collapsed", false)
 
 " Keybinding fixes
-map <C-A-f> -modes=n,v,i,t,c -ex emenu Tools.HttpFox.Toggle HttpFox
+map <C-A-f> -modes=n,v,i,t,c -ex emenu Tools.Web Developer.HttpFox.Toggle HttpFox
 map <M-m> -modes=n,v,i,t,c -ex emenu Window.Zoom
 map <C-c> -modes=n,v,i,t,c <Esc>
 map <CR> -modes=t <Esc><CR>
 map <BS> <Nop>
+map j -modes=n,v -ex feedkeys! 5j
+map k -modes=n,v -ex feedkeys! 5k
+"map <C-p> -modes=c <Up>
+
+" Commandline Editing
+map <C-w> -modes=t -ex feedkeys! <Esc><C-w><C-t>
+"map i -modes=t -ex feedkeys! <Esc>
 
 map <C-l> -modes=n,v,i,t,c -ex set nohlfind | echo "Reset"
 
@@ -65,7 +73,7 @@ nmap -group=jira -builtin <S-l> l
 nmap -group=jira <Esc> <Esc>gi<C-v><Esc><Esc>
 nmap -group=jira . <C-v>.
 nmap -group=jira Q fNextfNot<Esc>
-set passkeys+=janrain.atlassian.net:j,k,t,z,sb,st,m,a,e,c
+set passkeys+=janrain.atlassian.net:j,k,z,sb,st,m,a,e,c
 
 " Set accesskey to alt
 javascript prefs.set("ui.key.generalAccessKey", 18);
