@@ -38,7 +38,8 @@ map <C-c> -modes=n,v,i,t,c <Esc>
 map <CR> -modes=t <Esc><CR>
 map <BS> <Nop>
 
-map <C-l> -modes=n,v,i,t,c -ex set nohlfind | echo "Reset"
+map <C-l> -modes=n,v,i,t,c -ex set nohlfind | echom "Reset"
+map <C-t> -modes=n,v,i,t,c -js if (options.showtabline == "always") { options.showtabline="never" } else { options.showtabline="always" }
 
 map <M-o> -ex open ~/
 
