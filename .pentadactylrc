@@ -4,7 +4,7 @@ silent colorscheme araxia
 set activate=downloads,help,tabopen,homepage,extoptions,bookmarks,addons
 " set activate-=paste,diverted,links
 set editor="~/bin/vimperator +<line> <file>"
-set guioptions=BMNs
+set guioptions=MNs
 set hinttimeout=500
 set incfind
 set hlfind
@@ -22,9 +22,9 @@ set passunknown=base
 " set showstatuslinks=command
 " set wildignore=...
 " set hintkeys=asdfghjkl;
-set jsdebugger
+" set jsdebugger
 set strictfocus=*:moderate
-set verbose=0
+"set verbose=1
 " don't show autocomplete list until <Tab>
 set autocomplete=
 
@@ -57,7 +57,7 @@ map <C-w>k -ex feedkeys! gTgt:tabm 1<CR><C-6>
 map <C-w>j -ex feedkeys! gTgt:tabm $<CR><C-6>
 
 " JIRA
-group jira -description 'bindings for JIRA navigation' -locations=janrain.atlassian.net
+group jira -description 'bindings for JIRA navigation' -locations=tofurkey.urbanairship.com
 nmap -group=jira p <Pass>
 nmap -group=jira h p
 nmap -group=jira n <Pass>
@@ -66,7 +66,9 @@ nmap -group=jira -builtin <S-l> l
 nmap -group=jira <Esc> <Esc>gi<C-v><Esc><Esc>
 nmap -group=jira . <C-v>.
 nmap -group=jira Q fNextfNot<Esc>
-set passkeys+=janrain.atlassian.net:j,k,t,z,sb,st,m,a,e,c
+set passkeys+=tofurkey.urbanairship.com:j,k,z,sb,st,m,a,e,c
+set passkeys+=atlassian.prod.urbanairship.com:j,k,n,p,[,{
+"group! default
 
 " Set accesskey to alt
 javascript prefs.set("ui.key.generalAccessKey", 18);
@@ -132,6 +134,13 @@ javascript <<EOF
     document.getElementById("status-bar").insertBefore(faviconPanel, document.getElementById("security-button"));
 })();
 EOF
+
+" Fix for bug:
+style -name tabbrowser-fix chrome://* <<EOM
+.tabbrowser-tabs {
+  max-height:       unset;
+}
+EOM
 
 " `:rehash` to reload
 " vim:ft=pentadactyl:
