@@ -136,9 +136,9 @@ javascript <<EOF
 EOF
 
 " Fix for bug:
-style -name tabbrowser-fix chrome://* <<EOM
-.tabbrowser-tabs {
-  max-height:       unset;
+style -name tabbrowser-height-fix chrome://* <<EOM
+[dactyl-australis=true] .tabbrowser-tabs {
+    max-height:       unset !important;
 }
 EOM
 
