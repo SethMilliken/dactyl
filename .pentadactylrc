@@ -5,6 +5,7 @@ set activate=downloads,help,tabopen,homepage,extoptions,bookmarks,addons
 " set activate-=paste,diverted,links
 set editor="~/bin/vimperator +<line> <file>"
 set guioptions=MNs
+"set guioptions+=B " bookmark bar
 set hinttimeout=500
 set incfind
 set hlfind
@@ -32,11 +33,18 @@ set autocomplete=
 autocmd Fullscreen .* :js document.getElementById("status-bar").setAttribute("moz-collapsed", false)
 
 " Keybinding fixes
-map <C-A-f> -modes=n,v,i,t,c -ex emenu Tools.HttpFox.Toggle HttpFox
+map <C-A-f> -modes=n,v,i,t,c -ex emenu Tools.Web Developer.HttpFox.Toggle HttpFox
 map <M-m> -modes=n,v,i,t,c -ex emenu Window.Zoom
 map <C-c> -modes=n,v,i,t,c <Esc>
 map <CR> -modes=t <Esc><CR>
 map <BS> <Nop>
+map j -modes=n,v -ex feedkeys! 5j
+map k -modes=n,v -ex feedkeys! 5k
+"map <C-p> -modes=c <Up>
+
+" Commandline Editing
+map <C-w> -modes=t -ex feedkeys! <Esc><C-w><C-t>
+"map i -modes=t -ex feedkeys! <Esc>
 
 map <C-l> -modes=n,v,i,t,c -ex set nohlfind | echom "Reset"
 map <C-t> -modes=n,v,i,t,c -js if (options.showtabline == "always") { options.showtabline="never" } else { options.showtabline="always" }
