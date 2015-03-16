@@ -59,7 +59,10 @@ map <S-M-b> :bmarks! -T=
 command yinfo yank document.title.replace(/ - Pentadactyl$/,'') + ' ' + content.location.href;
 map <C-y>y -ex yinfo | feedkeys! <CR><CR>:echo "Yanked page information."<CR>
 
-map <C-y>t -js alert("This is an example of calling javascript from a map.");
+command! -nargs=* mkdir tabopen about:treestyletab-group?<args>
+map <C-y>t -ex feedkeys! :mkdir 
+
+map <C-y>r -js alert("This is an example of calling javascript from a map.");
 
 map <C-w>k -ex feedkeys! gTgt:tabm 1<CR><C-6>
 map <C-w>j -ex feedkeys! gTgt:tabm $<CR><C-6>
