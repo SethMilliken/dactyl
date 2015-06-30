@@ -47,7 +47,8 @@ map <C-w> -modes=t -ex feedkeys! <Esc><C-w><C-t>
 "map i -modes=t -ex feedkeys! <Esc>
 
 map <C-l> -modes=n,v,i,t,c -ex set nohlfind | echom "Reset"
-map <C-t> -modes=n,v,i,t,c -js if (options.showtabline == "always") { options.showtabline="never" } else { options.showtabline="always" }
+"map <C-t> -modes=n,v,i,t,c -js if (options.showtabline == "always") { options.showtabline="never" } else { options.showtabline="always" }
+map <C-t> -modes=n,v,i,t,c -js TreeStyleTabBrowserAutoHide.treeStyleTab.toggleAutoHide()
 
 map <M-o> -ex open ~/
 
