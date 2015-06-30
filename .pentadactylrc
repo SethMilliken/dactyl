@@ -60,6 +60,8 @@ map <S-M-b> :bmarks! -T=
 command yinfo yank document.title.replace(/ - Pentadactyl$/,'') + ' ' + content.location.href;
 map <C-y>y -ex yinfo | feedkeys! <CR><CR>:echo "Yanked page information."<CR>
 
+command! support tabopen about:support
+
 command! -nargs=* mkdir tabopen about:treestyletab-group?<args>
 map <C-y>t -ex feedkeys! :mkdir 
 
