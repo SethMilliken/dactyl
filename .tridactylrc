@@ -1,8 +1,12 @@
 """ README {{{
-" Must run :nativeinstall for this file to work
-" :native will tell you the status of that
-" Comments must start with ". No inline comments allowed.
+" NOTE: Must run :nativeinstall for Tridactyl to be able to read this file
+" `:native` will tell you the status of that
+" WARN: `:source` will not tell you or give you any indication
+" that it did not succeed!
+"
 " `:source` (or `\r`) to reload this file
+"
+" Comments must start with `"`. No inline comments allowed.
 """ }}}
 """ Settings {{{
 colors shydactyl
