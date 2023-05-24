@@ -1,0 +1,67 @@
+""" README {{{
+" Must run :nativeinstall for this file to work
+" :native will tell you the status of that
+" Comments must start with ". No inline comments allowed.
+" `:source` (or `\r`) to reload this file
+""" }}}
+""" Settings {{{
+colors shydactyl
+
+set hintfiltermode vimperator
+set hintchars 1234567890.
+
+" set allowautofocus false
+" also set browser.autofocus = false in about:config
+
+""" }}}
+""" Autocmds {{{
+" Unfocus active element on enter?
+autocmd TabEnter .* unfocus
+
+""" }}}
+""" Aliases {{{
+alias downloads tabopen about:downloads
+alias nmap viewconfig nmaps
+alias he help
+alias map bind
+
+""" }}}
+""" Bindings {{{
+bind \r composite fillcmdline_tmp 2000 Reloading configuration... ; source
+bind \p fillcmdline tabpush
+
+bind T fillcmdline taball
+bind zx zoom 0.5 true
+bind gb tabprev
+bind go fillcmdline goto
+
+" most recent tab (same as `<C-6>` built-in)
+bind gl tab #
+
+" move current tab into a TST group tab
+bind \m composite fillcmdline tabmove group-tab.html
+" following bind is aspirational; does not actually work
+"bind \m composite save completionfuzziness; set completionfuzziness 0.4; fillcmdline tabmove | tab #; restore completionfuzziness
+
+bind <C-l> composite get_current_url | fillcmdline_notrail open
+
+""" }}}
+""" Workarounds {{{
+""" Faciliate completion list navigation
+""" cf. https://github.com/tridactyl/tridactyl/issues/4164
+bind --mode=ex <C-p> ex.prev_completion
+bind --mode=ex <C-n> ex.next_completion
+bind --mode=ex <C-b> composite ex.prev_completion; ex.prev_completion; ex.prev_completion; ex.prev_completion; ex.prev_completion; ex.prev_completion
+bind --mode=ex <C-f> composite ex.next_completion; ex.next_completion; ex.next_completion; ex.next_completion; ex.next_completion; ex.next_completion
+
+""" Fix tab/taball completion
+""" cf. https://github.com/tridactyl/tridactyl/issues/4707
+set completions.Tab.autoselect false
+set completions.TabAll.autoselect false
+set completionfuzziness 0.33
+
+""" }}}
+" Show loaded status
+fillcmdline_tmp 2000 Loaded ~/.tridactylrc
+
+" vim:ft=vim
