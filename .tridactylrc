@@ -8,6 +8,8 @@
 "
 " Comments must start with `"`. No inline comments allowed.
 """ }}}
+" Display something so that we know it's working.
+fillcmdline_tmp 2000 Loading configuration...
 """ Settings {{{
 colors shydactyl
 
@@ -24,14 +26,15 @@ autocmd TabEnter .* unfocus
 
 """ }}}
 """ Aliases {{{
-alias downloads tabopen about:downloads
+alias downloads fillcmdline_tmp 2000 Use Command-J or about:downloads
+alias dl downloads
 alias nmap viewconfig nmaps
 alias he help
 alias map bind
 
 """ }}}
 """ Bindings {{{
-bind \r composite fillcmdline_tmp 2000 Reloading configuration... ; source
+bind \r source
 bind \p fillcmdline tabpush
 
 bind T fillcmdline taball
