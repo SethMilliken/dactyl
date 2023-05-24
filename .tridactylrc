@@ -46,7 +46,7 @@ bind go fillcmdline goto
 bind gl tab #
 
 " move current tab into a TST group tab
-bind \m composite fillcmdline tabmove group-tab.html
+bind \m composite tabprev; tabnext; fillcmdline tabmove group-tab.html
 " following bind is aspirational; does not actually work
 "bind \m composite save completionfuzziness; set completionfuzziness 0.4; fillcmdline tabmove | tab #; restore completionfuzziness
 
