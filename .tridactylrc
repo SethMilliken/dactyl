@@ -34,8 +34,13 @@ alias map bind
 
 """ }}}
 """ Bindings {{{
+" Leader
 bind \r source
 bind \p fillcmdline tabpush
+" move current tab into a TST group tab
+bind \m composite tabprev; tabnext; fillcmdline tabmove group-tab.html
+" following bind is aspirational; does not actually work
+"bind \m composite save completionfuzziness; set completionfuzziness 0.4; fillcmdline tabmove | tab #; restore completionfuzziness
 
 bind T fillcmdline taball
 bind zx zoom 0.5 true
@@ -45,10 +50,6 @@ bind go fillcmdline goto
 " most recent tab (same as `<C-6>` built-in)
 bind gl tab #
 
-" move current tab into a TST group tab
-bind \m composite tabprev; tabnext; fillcmdline tabmove group-tab.html
-" following bind is aspirational; does not actually work
-"bind \m composite save completionfuzziness; set completionfuzziness 0.4; fillcmdline tabmove | tab #; restore completionfuzziness
 
 bind <C-l> composite get_current_url | fillcmdline_notrail open
 
